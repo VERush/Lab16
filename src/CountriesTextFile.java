@@ -11,9 +11,8 @@ import java.nio.file.Paths;
 
 public class CountriesTextFile {
 
-
 	public static void readFromFile(String c) {
-		Path readFile = Paths.get("countries.txt");
+		Path readFile = Paths.get(c);
 		File file = readFile.toFile(); // convert to a file object
 
 		try {
@@ -35,7 +34,7 @@ public class CountriesTextFile {
 	}
 
 	public static void writeToFile(String c) {
-		Path writeFile = Paths.get("countries.txt");
+		Path writeFile = Paths.get(c);
 		File file = writeFile.toFile();
 
 		try {
@@ -48,7 +47,7 @@ public class CountriesTextFile {
 			outW.close(); // flushes data, closes the stream
 
 		} catch (FileNotFoundException e) {
-			createFile("countries.txt");
+			createFile(c);
 			System.out.println("The file was not found here...");
 		}
 
@@ -71,17 +70,17 @@ public class CountriesTextFile {
 		System.out.println("Absolute Path: " + filePath.toAbsolutePath());
 	}
 
-public static void createDirectory(String path) {
-	Path dirPath = Paths.get(path);
+	public static void createDirectory(String path) {
+		Path dirPath = Paths.get(path);
 
-	if (Files.notExists(dirPath)) {
-		try {
-			Files.createDirectories(dirPath);
-		} catch (IOException e) {
-			System.out.println("Something went wrong!");
+		if (Files.notExists(dirPath)) {
+			try {
+				Files.createDirectories(dirPath);
+			} catch (IOException e) {
+				System.out.println("Something went wrong!");
+			}
 		}
-	}
 
-}
+	}
 
 }

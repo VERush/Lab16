@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+/*
+ *  Lab 16 Country File Display and Update
+ *    by VickiRush
+ *    May 10, 2018
+ */
 public class CountryApp {
 
 	public static void main(String[] args) {
