@@ -48,15 +48,15 @@ public class CountriesTextFile {
 			outW.close(); // flushes data, closes the stream
 
 		} catch (FileNotFoundException e) {
-			// createFile("countries.txt");
+			createFile("countries.txt");
 			System.out.println("The file was not found here...");
 		}
 
 	}
 
-	public static void createFile(String dirString, String fileString) {
+	public static void createFile(String fileString) {
 
-		Path filePath = Paths.get(dirString, fileString);
+		Path filePath = Paths.get(fileString);
 
 		if (Files.notExists(filePath)) {
 			try {

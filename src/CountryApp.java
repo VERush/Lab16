@@ -14,12 +14,17 @@ public class CountryApp {
 
 			prompt = "Enter menu number: ";
 			menu = Validator.getInt(scan, prompt, 1, 3);
+			System.out.println();
 			if (menu == 1) {
 				CountriesTextFile.readFromFile(fileString);
+				System.out.println();
 			} else if (menu == 2) {
+				System.out.println();
 				prompt = "Enter country: ";
 				country = Validator.getString(scan, prompt);
 				CountriesTextFile.writeToFile(country);
+				System.out.println("This country has been saved!");
+				System.out.println();
 			} else {
 				System.out.println("Buh-bye!");
 			}
